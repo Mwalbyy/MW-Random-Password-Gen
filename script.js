@@ -1,6 +1,5 @@
 const passwordEl = document.getElementById("password");
 const startBtn = document.querySelector("btn");
-
 //Arrays created for the available characters in the random password
 let special = [
   "!",
@@ -176,14 +175,14 @@ function promptMe() {
     }
     //TODO create loop that cycles through the selected options!
 
-    for (let index = 0; index < userLengthChoice.length; index++) {
-      let finalPassword = finalPassword.concat(
-        userSelection1[Math.floor(Math.random() * userLengthChoice.length)]
-      );
-    }
+    let finalPassword = "";
 
-    let finalPassword = (document.getElementById("password").innerHTML =
-      finalPassword);
+    for (let i = 0; i < passwordLength; i++) {
+      finalPassword +=
+        userSelection1[Math.floor(Math.random() * userSelection1.length)];
+    }
+    console.log(finalPassword);
+    document.getElementById("password").innerHTML = finalPassword;
   } else {
     alert("enter a number between 8 and 128 silly goose");
   }
